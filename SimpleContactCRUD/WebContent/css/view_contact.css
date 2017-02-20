@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+/* GENERAL */
+body {
+	font-family: "Ubuntu", Sans-serif;
+	font-size: 11pt;
+}
+
+section#wrapper {
+	margin-left: 60px;
+}
+
+/* HEADER */
+header h1 { 
+	padding: 5px 0; 
+	margin: 0;
+}
+
+hr {
+	width: 410px;
+	margin: 0 0 5px 0;
+}
+
+/* TABLE */
+th {
+	text-align: right;
+}
+
+td {
+	padding: 10px 10px;
+}
+
+/* FORM */
+input.input-field {
+	padding: 5px;
+	height: 15px;
+	width: 300px;
+}
+
+div#buttons {
+	margin-left: 100px;
+	padding: 15px;
+}
+
+div#buttons a {
+	color: #FFFFFF;
+	text-decoration: none;
+	padding: 5px 10px;
+}
+
+a#update-button {
+	background-color: #2C72F3;
+	border-radius: 5px;
+}
+
+a#update-button:hover {
+	background-color: #0B4ECA;
+}
+
+a#delete-button {
+	background-color: #F5332E;
+	border-radius: 5px;
+	margin-left: 25px;
+}
+
+a#delete-button:hover {
+	background-color: #ED110C;
+}
+
+p#error-message {
+	display: none;
+	color: #CA0000;
+	background-color: #FBAEAC;
+	border: 1px solid #CA0000;
+	border-radius: 5px;
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	padding: 5px;
+	margin: 15px 0 5px 0;
+	width: 400px;
+}
+
+
+
+
+
+
+
+

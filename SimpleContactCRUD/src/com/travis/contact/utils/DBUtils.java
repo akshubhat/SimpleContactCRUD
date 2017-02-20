@@ -42,6 +42,7 @@ public class DBUtils {
         if(conn != null) {
             try {
                 conn.close();
+                LOGGER.log(Level.INFO, "Connection Closed.");
             } catch (SQLException err) {
             	LOGGER.log(Level.FINER, err.toString());
             }
@@ -52,6 +53,7 @@ public class DBUtils {
         if(statement != null) {
             try {
                 statement.close();
+                LOGGER.log(Level.INFO, "Statement Close.");
             } catch (SQLException err) {
             	LOGGER.log(Level.FINER, err.toString());
             }
@@ -62,6 +64,7 @@ public class DBUtils {
         if(result != null) {
             try {
                 result.close();
+                LOGGER.log(Level.INFO, "ResultSet Close.");
             } catch (SQLException err) {
             	LOGGER.log(Level.FINER, err.toString());
             }

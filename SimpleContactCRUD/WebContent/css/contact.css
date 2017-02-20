@@ -1,26 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
 /* GENERAL */
 body {
-	background-color: #F7F7F7;
-	font-family: Arial, Sans-serif;
-	font-size: 10pt;
+	font-family: "Ubuntu", Sans-serif;
+	font-size: 11pt;
 }
 
-section#main-content {
-	width: 800px;
+section#wrapper {
+	width: 900px;
 	margin: 0 auto;
 }
 
-/* HEADER */
-header h1 { margin-left: 200px; }
+a {
+	color: blue;
+	text-decoration: none;
+}
 
-/* CONTENT */
+a:hover { 
+	color: red;
+	text-decoration: underline; 
+}
+
+
+/* HEADER */
+header h1 { 
+	padding: 5px 0;
+	margin: 0 0 0 30px; 
+}
+
+hr {
+	background-color: #FF2828;
+	padding: 0;
+	margin: 0;
+}
+
+
+/* NAV */
+nav {
+	padding: 10px 0 10px 0;
+}
+
+nav a {
+	color: #FFFFFF;
+	background-color: #00A388;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-right: 5px;
+}
+
+nav a:hover {
+	color: #FFFFFF;
+	background-color: #EF6138;
+	text-decoration: none;
+}
+
+/* CONTENT TABLE */
+div#table-content {
+	overflow-y: auto;
+	height: 400px;
+}
+
 table {
+	border: 1px solid #AEAEAE;
 	border-collapse: collapse;
-	border: 1px solid #C8C8C8;
 }
 
 th, td {
-	padding: 5px 7px;
+	padding: 10px 10px;
 	text-align: left;
 }
+
+th {
+	background-color: #C7C7C7;
+}
+
+td.action-cols { 
+	text-align: center;
+}
+
+td.action-cols a {
+	color: #FFFFFF;
+	background-color: #EF6138;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+td.action-cols a:hover {
+	text-decoration: none;
+	background-color: #00A388;
+}
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
