@@ -43,7 +43,7 @@ public class ContactDaoImpl implements ContactDao	 {
                 contact.setAddress(result.getString("address"));
                 contacts.add(contact);
             }
-        } catch (SQLException err) {
+        } catch(SQLException err) {
             LOGGER.log(Level.FINER, err.toString());
         } finally {
             DBUtils.close(result);
@@ -66,7 +66,7 @@ public class ContactDaoImpl implements ContactDao	 {
         	statement = connection.prepareStatement(SQL_GET_CONTACT_BY_ID);
         	statement.setInt(1, contactId);
         	result = statement.executeQuery();
-        	while (result.next()) {
+        	while(result.next()) {
         		contact = new Contact();
         		contact.setContactId(result.getInt("contact_id"));
                 contact.setFirstName(result.getString("f_name"));
@@ -74,7 +74,7 @@ public class ContactDaoImpl implements ContactDao	 {
                 contact.setEmail(result.getString("email"));
                 contact.setAddress(result.getString("address"));
         	}
-        } catch (SQLException err) {
+        } catch(SQLException err) {
         	LOGGER.log(Level.FINER, err.toString());
         } finally {
             DBUtils.close(result);
@@ -113,8 +113,21 @@ public class ContactDaoImpl implements ContactDao	 {
     }
 
     @Override
-    public void deteleContact(Contact contact) {
+    public void deteleContact(int contactId) {
+       Connection connection = null;
+       PreparedStatement statement = null;
        
+       try {
+    	   connection = DBUtils.getConnection(connection);
+    	   statement = connection.prepareStatement(SQL_DELETE_CONTACT);
+    	   statement.setInt(1, contactId);
+    	   statement.executeUpdate();  	   
+       } catch(SQLException err) {
+    	   LOGGER.log(Level.FINER, err.toString());
+       } finally {
+    	   DBUtils.close(statement);
+           DBUtils.close(connection);
+       }
     }
     
 }

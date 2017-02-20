@@ -10,6 +10,6 @@ public interface ContactDao {
     public Contact getContactById(int contactId);
     public void insertNewContact(Contact contact);
     public void updateContact(Contact contact);
-    public void deteleContact(Contact contact);
+    public void deteleContact(int contactId);
 }
 
