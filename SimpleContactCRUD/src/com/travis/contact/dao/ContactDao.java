@@ -8,8 +8,8 @@ import com.travis.contact.model.Contact;
 public interface ContactDao {
     public List<Contact> getAllContact();
     public Contact getContactById(int contactId);
-    public void insertNewContact(Contact contact);
-    public void updateContact(Contact contact);
-    public void deteleContact(int contactId);
+    public boolean insertNewContact(Contact contact);
+    public boolean updateContact(Contact contact);
+    public boolean deteleContact(int contactId);
 }
 

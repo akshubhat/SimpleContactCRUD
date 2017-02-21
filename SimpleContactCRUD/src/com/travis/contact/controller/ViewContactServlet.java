@@ -32,25 +32,7 @@ public class ViewContactServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int contactId = Integer.parseInt(request.getParameter("contact-id"));
-		String firstName = request.getParameter("firstname");
-		String lastName = request.getParameter("lastname");
-		String email = request.getParameter("email");
-		String address = request.getParameter("address");
 		
-		Contact contact = new Contact();
-		contact.setContactId(contactId);
-		contact.setFirstName(firstName);
-		contact.setLastName(lastName);
-		contact.setEmail(email);
-		contact.setAddress(address);
-		
-		ContactDaoImpl dao = new ContactDaoImpl();
-		dao.updateContact(contact);
-		
-		request.setAttribute("success-message", new String("Update Successful!"));
-		RequestDispatcher rd = request.getRequestDispatcher("jsp/success.jsp");
-		rd.forward(request, response);
 	}
 
 }
