@@ -17,33 +17,37 @@
         <h1>Simple Contact CRUD</h1>
         <hr>
       </header>
-      <nav><a href="">New Contact</a></nav>
-      <div id="table-content">
-        <table border="1">
+      <nav><a href="CreateContactServlet" id="create-button">New Contact</a></nav>
+      <% 
+      @SuppressWarnings("unchecked")
+      List<Contact> contacts = (List<Contact>)request.getAttribute("contacts");
+      if(contacts.size() > 0) {
+      %>
+        <div id="table-content">
+          <table border="1">
+              <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Action</th>
+               </tr>
+            <% for(Contact contact : contacts) { %>
             <tr>
-              <th>First name</th>
-              <th>Last name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Action</th>
-             </tr>
-          <%
-          @SuppressWarnings("unchecked")
-          List<Contact> contacts = (List<Contact>)request.getAttribute("contacts");
-          for(Contact contact : contacts) {
-          %>
-          <tr>
-            <td><% out.print(contact.getFirstName()); %></td>
-            <td><% out.print(contact.getLastName()); %></td>
-            <td><% out.print(contact.getEmail()); %></td>
-            <td><% out.print(contact.getAddress()); %></td>
-            <td class="action-cols"><a href="ViewContactServlet?contactId=<% out.print(contact.getContactId()); %>" class="view-contact-url">View</a></td>
-          </tr>
-          <%
-          }
-          %>
-        </table>
-      </div>
+              <td><% out.print(contact.getFirstName()); %></td>
+              <td><% out.print(contact.getLastName()); %></td>
+              <td><% out.print(contact.getEmail()); %></td>
+              <td><% out.print(contact.getAddress()); %></td>
+              <td class="action-cols"><a href="ViewContactServlet?contactId=<% out.print(contact.getContactId()); %>" class="view-contact-url">View</a></td>
+            </tr>
+            <%
+            }
+            %>
+          </table>
+        </div>
+    <% } else { %>
+        <p>No contact found!</p>
+    <% } %>
     </section>
   </body>
 </html>

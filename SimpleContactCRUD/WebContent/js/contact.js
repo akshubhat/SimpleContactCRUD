@@ -1,27 +1,27 @@
-function handleViewButton() {
-	var viewButton = $(".view-contact-url");
-	viewButton.on("click", function(event) {
-		window.open(this.href, "View Contact", "height=400,width=550,menubar=0");
+function handleMainPageButtons(button, title) {
+	var buttons = $(button);
+	buttons.on("click", function(event) {
+		window.open(this.href, title, "height=400,width=550,menubar=0");
 		event.preventDefault();
 	});
 }
 
-function handleUpdateButton() {
-	var updateButton = $("#update-button");
+function handlePopUpButtons(button, servlet) {
+	var updateButton = $(button);
 	
 	updateButton.on("click", function(event) {
 		event.preventDefault();
-		$("#contact-form").attr("action", "UpdateServlet");
-		if(hasEmptyField(".input-field")) {
-			$("p#error-message").show();
-		} else {
+		$("#contact-form").attr("action", servlet);
+		if(servlet == "UpdateContactServlet") {
+			if(hasEmptyField(".input-field")) {
+				$("p#error-message").show();
+			} else {
+				$("#contact-form").submit();
+			}
+		} else if (servlet == "DeleteContactServlet") {
 			$("#contact-form").submit();
 		}
 	});
-}
-
-function handleDeleteButton() {
-	
 }
 
 function hasEmptyField(inputField) {
@@ -35,6 +35,8 @@ function hasEmptyField(inputField) {
 }
 
 $(document).ready(function() {
-	handleViewButton();
-	handleUpdateButton();
+	handleMainPageButtons(".view-contact-url", "View Contact");
+	handleMainPageButtons("#create-button", "Create New Contact");
+	handlePopUpButtons("#update-button", "UpdateContactServlet");
+	handlePopUpButtons("#delete-button", "DeleteContactServlet");
 });

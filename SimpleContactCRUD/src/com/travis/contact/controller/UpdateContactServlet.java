@@ -12,7 +12,7 @@ import com.travis.contact.dao.ContactDaoImpl;
 import com.travis.contact.model.Contact;
 
 
-public class UpdateServlet extends HttpServlet {
+public class UpdateContactServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

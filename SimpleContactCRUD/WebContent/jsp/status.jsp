@@ -28,7 +28,7 @@
         <p id="error-message"><% out.print(message); %></p>
     <% } %>
     <p id="close-message">Window will be closed in <span id="second">5</span> second.</p>
-    <p id="close-button"><a href="" onclick="window.close();">Close</a></p>
+    <p id="close-button"><a href="" onclick="window.opener.location.reload(true);window.close();">Close</a></p>
     <script>
     var second = 5;
     var counter = setInterval(function() {
@@ -36,6 +36,7 @@
     	document.getElementById("second").textContent = second;
     	if(second <= 0) {
     		clearInterval(counter);
+    		window.opener.location.reload(true);
     		window.close();
     	}
     }, 1000);

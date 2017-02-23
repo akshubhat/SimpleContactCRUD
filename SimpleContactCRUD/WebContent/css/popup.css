@@ -37,33 +37,35 @@ input.input-field {
 	width: 300px;
 }
 
-div#buttons {
+div#button-container {
 	margin-left: 100px;
 	padding: 15px;
 }
 
-div#buttons a {
+div#button-container a {
 	color: #FFFFFF;
 	text-decoration: none;
 	padding: 5px 10px;
 }
 
-a#update-button {
-	background-color: #2C72F3;
+a.button {
 	border-radius: 5px;
 }
 
-a#update-button:hover {
+a#create-button, a#update-button {
+	background-color: #2C72F3;
+}
+
+a#cancel-button, a#delete-button {
+    background-color: #F5332E;
+    margin-left: 25px;
+}
+
+a#create-button:hover, a#update-button:hover {
 	background-color: #0B4ECA;
 }
 
-a#delete-button {
-	background-color: #F5332E;
-	border-radius: 5px;
-	margin-left: 25px;
-}
-
-a#delete-button:hover {
+a#cancel-button:hover, a#delete-button:hover {
 	background-color: #ED110C;
 }
 

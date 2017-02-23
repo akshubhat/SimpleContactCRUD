@@ -8,7 +8,6 @@
     <servlet-name>ViewAllContactsServlet</servlet-name>
     <url-pattern></url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>ViewContactServlet</servlet-name>
     <servlet-class>com.travis.contact.controller.ViewContactServlet</servlet-class>
@@ -17,23 +16,28 @@
     <servlet-name>ViewContactServlet</servlet-name>
     <url-pattern>/ViewContactServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-    <servlet-name>UpdateServlet</servlet-name>
-    <servlet-class>com.travis.contact.controller.UpdateServlet</servlet-class>
+    <servlet-name>UpdateContactServlet</servlet-name>
+    <servlet-class>com.travis.contact.controller.UpdateContactServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>UpdateServlet</servlet-name>
-    <url-pattern>/UpdateServlet</url-pattern>    
+    <servlet-name>UpdateContactServlet</servlet-name>
+    <url-pattern>/UpdateContactServlet</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>DeleteContactServlet</servlet-name>
     <servlet-class>com.travis.contact.controller.DeleteContactServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>DeleteContactServlet</servlet-name>
-    <url-pattern>/DeleteContactServlet</url-pattern>    
+    <url-pattern>/DeleteContactServlet</url-pattern>
   </servlet-mapping>
-  
+  <servlet>
+    <servlet-name>CreateContactServlet</servlet-name>
+    <servlet-class>com.travis.contact.controller.CreateContactServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateContactServlet</servlet-name>
+    <url-pattern>/CreateContactServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
