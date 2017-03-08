@@ -17,7 +17,7 @@ import com.travis.contact.utils.DBUtils;
 public class ContactDaoImpl implements ContactDao	 {
     private final String SQL_GET_ALL_CONTACT = "SELECT * FROM contacts";
     private final String SQL_GET_CONTACT_BY_ID = "SELECT * FROM contacts WHERE contact_id=?";
-    private final String SQL_INSERT_NEW_CONTACT = "INSERT INTO contacts(f_name,l_name,_email,address) VALUES(?,?,?,?)";
+    private final String SQL_INSERT_NEW_CONTACT = "INSERT INTO contacts (f_name, l_name, email, address) VALUES (?,?,?,?)";
     private final String SQL_UPDATE_CONTACT = "UPDATE contacts SET f_name=?, l_name=?,email=?,address=? WHERE contact_id=?";
     private final String SQL_DELETE_CONTACT = "DELETE FROM contacts WHERE contact_id=?";
     private static final Logger LOGGER = Logger.getLogger(ContactDaoImpl.class.getName());
@@ -87,8 +87,27 @@ public class ContactDaoImpl implements ContactDao	 {
 
     @Override
     public boolean insertNewContact(Contact contact) {
-       
-    	return false;
+    	Connection connection = null;
+    	PreparedStatement statement = null;
+    	boolean success = false;
+    	
+    	try {
+    		connection = DBUtils.getConnection(connection);
+    		statement = connection.prepareStatement(SQL_INSERT_NEW_CONTACT);
+    		statement.setString(1, contact.getFirstName());
+    		statement.setString(2, contact.getLastName());
+    		statement.setString(3, contact.getEmail());
+    		statement.setString(4, contact.getAddress());
+    		if(statement.executeUpdate() > 0) {
+    			success = true;
+    		}
+    	} catch(SQLException err) {
+    		LOGGER.log(Level.FINER, err.toString());
+    	} finally {
+    		
+    	}
+    	
+    	return success;
     }
 
     @Override

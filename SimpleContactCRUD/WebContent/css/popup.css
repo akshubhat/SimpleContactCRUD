@@ -6,7 +6,7 @@ body {
 	font-size: 11pt;
 }
 
-section#wrapper {
+section.wrapper {
 	margin-left: 60px;
 }
 
@@ -37,39 +37,39 @@ input.input-field {
 	width: 300px;
 }
 
-div#button-container {
+div.button-container {
 	margin-left: 100px;
 	padding: 15px;
 }
 
-div#button-container a {
+div.button-container a {
 	color: #FFFFFF;
 	text-decoration: none;
 	padding: 5px 10px;
 }
 
-a.button {
+a.buttons {
 	border-radius: 5px;
 }
 
-a#create-button, a#update-button {
+a.create-button, a.update-button {
 	background-color: #2C72F3;
 }
 
-a#cancel-button, a#delete-button {
+a.cancel-button, a.delete-button {
     background-color: #F5332E;
     margin-left: 25px;
 }
 
-a#create-button:hover, a#update-button:hover {
+a.create-button:hover, a.update-button:hover {
 	background-color: #0B4ECA;
 }
 
-a#cancel-button:hover, a#delete-button:hover {
+a.cancel-button:hover, a.delete-button:hover {
 	background-color: #ED110C;
 }
 
-p#error-message {
+p.error-message {
 	display: none;
 	color: #CA0000;
 	background-color: #FBAEAC;

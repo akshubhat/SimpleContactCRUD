@@ -6,7 +6,7 @@ body {
 	font-size: 11pt;
 }
 
-section#wrapper {
+section.wrapper {
 	width: 900px;
 	margin: 0 auto;
 }
@@ -40,7 +40,7 @@ nav {
 	padding: 10px 0 10px 0;
 }
 
-nav a {
+nav a.create-button {
 	color: #FFFFFF;
 	background-color: #00A388;
 	border-radius: 5px;
@@ -48,14 +48,14 @@ nav a {
 	margin-right: 5px;
 }
 
-nav a:hover {
+nav a.create-button:hover {
 	color: #FFFFFF;
 	background-color: #EF6138;
 	text-decoration: none;
 }
 
 /* CONTENT TABLE */
-div#table-content {
+div.table-content {
 	overflow-y: auto;
 	height: 400px;
 }
@@ -89,24 +89,3 @@ td.action-cols a:hover {
 	text-decoration: none;
 	background-color: #00A388;
 }
-
-
-
-
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

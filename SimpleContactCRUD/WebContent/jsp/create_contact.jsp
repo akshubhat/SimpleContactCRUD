@@ -7,18 +7,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/popup.css"> 
     <script src="js/jquery.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/popup.js"></script>
     <title>Create New Contact</title>
   </head>
   <body>
-    <section id="wrapper">
+    <section class="wrapper">
       <header>
         <h1>Create New Contact</h1>
         <hr>
       </header>
-      <section id="content">
-        <p id="error-message">Failed to update. Fields cannot leave blank.</p>
-        <form id="contact-form" method="post" action="">        
+      <section class="content">
+        <p class="error-message">Failed to update. Fields cannot leave blank.</p>
+        <form class="contact-form" method="post" action="CreateContactServlet">        
           <table>
             <tr>
               <th><label for="firstname">First name:</label></th>
@@ -38,7 +38,7 @@
             </tr>
           </table>
         </form>
-        <div id="button-container"><a href="" id="create-button" class="button">Create</a><a href="" id="cancel-button" class="button">Cancel</a></div>
+        <div class="button-container"><a href="" class="buttons create-button">Create</a><a href="" class="buttons cancel-button">Cancel</a></div>
       </section>
     </section>
   </body>

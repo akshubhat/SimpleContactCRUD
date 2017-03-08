@@ -7,19 +7,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="css/popup.css"> 
     <script src="js/jquery.js"></script>
-    <script src="js/contact.js"></script>
+    <script src="js/popup.js"></script>
     <title>View Contact</title>
   </head>
   <body>
-    <section id="wrapper">
+    <section class="wrapper">
       <header>
         <h1>View Contact</h1>
         <hr>
       </header>
-      <section id="content">
+      <section class="content">
         <% Contact contact = (Contact) request.getAttribute("contact"); %>
-        <p id="error-message">Failed to update. Fields cannot leave blank.</p>
-        <form id="contact-form" method="post" action="">
+        <p class="error-message">Failed to update. Fields cannot leave blank.</p>
+        <form class="contact-form" method="post" action="">
           <input type="hidden" name="contact-id" value="<% out.print(contact.getContactId()); %>">         
           <table>
             <tr>
@@ -40,7 +40,7 @@
             </tr>
           </table>
         </form>
-        <div id="button-container""><a href="" id="update-button" class="button">Update</a><a href="" id="delete-button" class="button">Delete</a></div>
+        <div class="button-container""><a href="" class="buttons update-button">Update</a><a href="" class="buttons delete-button">Delete</a></div>
       </section>
     </section>
   </body>

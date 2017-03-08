@@ -12,18 +12,18 @@
     <title>Simple Contact CRUD</title>
   </head>
   <body>
-    <section id="wrapper">
+    <section class="wrapper">
       <header>
         <h1>Simple Contact CRUD</h1>
         <hr>
       </header>
-      <nav><a href="CreateContactServlet" id="create-button">New Contact</a></nav>
+      <nav><a href="CreateContactServlet" class="create-button">New Contact</a></nav>
       <% 
       @SuppressWarnings("unchecked")
       List<Contact> contacts = (List<Contact>)request.getAttribute("contacts");
       if(contacts.size() > 0) {
       %>
-        <div id="table-content">
+        <div class="table-content">
           <table border="1">
               <tr>
                 <th>First name</th>
@@ -38,7 +38,7 @@
               <td><% out.print(contact.getLastName()); %></td>
               <td><% out.print(contact.getEmail()); %></td>
               <td><% out.print(contact.getAddress()); %></td>
-              <td class="action-cols"><a href="ViewContactServlet?contactId=<% out.print(contact.getContactId()); %>" class="view-contact-url">View</a></td>
+              <td class="action-cols"><a href="ViewContactServlet?contactId=<% out.print(contact.getContactId()); %>" class="view-button">View</a></td>
             </tr>
             <%
             }
